@@ -1,0 +1,114 @@
+Колличество ХП:
+ent_fire player addoutput «health 1000» — где 1000 это количество хп.
+ent_fire !picker addoutput «health 1» — где 1 это уже количество хп бота.
+...........................
+Время:
+mp_maxrounds - максимальное кол-во раундов в матче (0 выключает ограничение).
+mp_roundtime_defuse - максимальное время раунда для de карт (в минутах).
+mp_roundtime_hostage - максимальное время раунда для cs карт (в минутах).
+mp_roundtime - максимальное время раунда для других карт (в минута).
+mp_timelimit - максимальное время матча (в минутах, 0 выключает ограничение).
+...........................
+Всякая хрень:
+Надеть маску
+ent_fire !self addoutput "targetname facemask";
+prop_dynamic_create player\holiday\facemasks\facemask_dallas;
+ent_setname dallas;
+ent_fire dallas disablecollision;
+ent_fire dallas setparent facemask;
+ent_fire dallas setparentattachment facemask
+(Список всех масок:
+player\holiday\facemasks\facemask_battlemask
+player\holiday\facemasks\evil_clown
+player\holiday\facemasks\facemask_anaglyph
+player\holiday\facemasks\facemask_boar
+player\holiday\facemasks\facemask_bunny
+player\holiday\facemasks\facemask_bunny_gold
+player\holiday\facemasks\facemask_chains
+player\holiday\facemasks\facemask_chicken
+player\holiday\facemasks\facemask_dallas
+player\holiday\facemasks\facemask_devil_plastic
+player\holiday\facemasks\facemask_hoxton
+player\holiday\facemasks\facemask_porcelain_doll_kabuki
+player\holiday\facemasks\facemask_pumpkin
+player\holiday\facemasks\facemask_samurai
+player\holiday\facemasks\facemask_sheep_bloody
+player\holiday\facemasks\facemask_sheep_gold
+player\holiday\facemasks\facemask_sheep_model
+player\holiday\facemasks\facemask_skull
+player\holiday\facemasks\facemask_skull_gold
+player\holiday\facemasks\facemask_template
+player\holiday\facemasks\facemask_tf2_demo_model
+player\holiday\facemasks\facemask_tf2_engi_model
+player\holiday\facemasks\facemask_tf2_heavy_model
+player\holiday\facemasks\facemask_tf2_medic_model
+player\holiday\facemasks\facemask_tf2_pyro_model
+player\holiday\facemasks\facemask_tf2_scout_model
+player\holiday\facemasks\facemask_tf2_sniper_model
+player\holiday\facemasks\facemask_tf2_soldier_model
+player\holiday\facemasks\facemask_tf2_spy_model
+player\holiday\facemasks\facemask_tiki
+player\holiday\facemasks\facemask_wolf
+player\holiday\facemasks\porcelain_doll).
+...........................
+ent_create chicken
+ent_fire chicken skin 1 - у курицы белые перья
+ent_fire chicken skin 2 - у курицы черные перья
+ent_fire chicken setbodygroup 2 - у курицы на голове праздничный колпак
+ent_fire chicken setbodygroup 3 - курица накинула на себя простыню и стала призраком
+ent_fire chicken setbodygroup 4 - курица одела зеленый свитер
+ent_fire chicken setbodygroup 5 - у курицы кроличьи уши
+ent_fire chicken setbodygroup 6 - на голове курицы тыква
+ent_fire chicken setbodygroup 1 - курица без ничего.
+...........................
+Банановая бомба
+prop_physics_create props/cs_italy/bananna_bunch;
+ent_setname bomb;
+ent_fire bomb addoutput "spawnflags 256";
+ent_fire bomb addoutput "exploderadius 500";
+ent_fire bomb addoutput "explodedamage 9999999"
+...........................
+test_dispatcheffect
+test_dispatcheffect HunterDamage
+test_dispatcheffect WaterSurfaceExplosion
+test_dispatcheffect HelicopterMegaBomb
+test_dispatcheffect Explosion
+test_dispatcheffect gunshotsplash
+test_dispatcheffect waterripple
+test_dispatcheffect watersplash
+test_dispatcheffect watersplashquiet
+test_dispatcheffect csblood
+test_dispatcheffect CS_HolidayLight
+test_dispatcheffect RPGShotDown
+test_dispatcheffect error
+test_dispatcheffect TeslaZap
+test_dispatcheffect smoke
+test_dispatcheffect ManhackSparks
+...........................
+Ножи:
+give weapon_knife_ursus;
+give weapon_knife_gypsy_jackknife;
+give weapon_knife_stiletto;
+give weapon_knife_widowmaker;
+mp_drop_knife_enable 1;
+ent_fire weapon_knife addoutput "classname weapon_knifegg"
+
+стандартный нож кт - give weapon_knife_ct
+стандартный нож тт - give weapon_knife_t
+штык нож - give weapon_bayonet
+склажной нож - give weapon_knife_flip
+нож с лезвием-крюком - give weapon_knife_gut
+керамбит - give weapon_knife_karambit
+m9 bayonet - give weapon_knife_m9_bayonet
+охотничий нож - give weapon_knife_tactical
+нож-бабочка - give weapon_knife_butterfly
+нож фальшион - give weapon_knife_falchion
+золотой нож - give weapon_knifegg
+нож боуи - give weapon_knife_survival_bowie
+тычки - give weapon_knife_push
+...........................
+Speedhack:
+sv_cheats 1
+sv_maxspeed 10000
+give player_speedmod
+ent_fire player_speedmod modifyspeed 5 (вместо пятёрки, любое число)
